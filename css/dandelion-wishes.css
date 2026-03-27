@@ -1,0 +1,231 @@
+/* ============================================================
+   DANDELION WISHES COUNSELING — Custom CSS for Squarespace 7.1
+   Paste this entire file into: Design > Custom CSS
+   ============================================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+  --gold:        #f4c430;
+  --sage:        #7a9e7e;
+  --sage-dark:   #4a7c59;
+  --cream:       #fffdf0;
+  --surface:     #f5f9f0;
+  --text-dark:   #3d3028;
+  --text-body:   #5a4a3a;
+  --text-muted:  #8a7a6a;
+  --dark-bg:     #3d3028;
+  --border-gold: #f4e8b8;
+
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-pill: 30px;
+
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.07);
+  --section-pad: 44px 32px;
+}
+
+/* --- Typography --- */
+body,
+.sqsrte-large,
+.sqsrte-small {
+  font-family: 'Source Serif 4', Georgia, serif;
+  color: var(--text-body);
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4,
+.sqsrte-large strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(28px, 5vw, 42px); }
+h2 { font-size: clamp(22px, 3.5vw, 30px); }
+h3 { font-size: clamp(16px, 2.5vw, 20px); }
+
+/* Eyebrow labels — small uppercase labels above headings */
+.eyebrow {
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage);
+  font-weight: 700;
+}
+
+/* --- Site Background --- */
+body { background-color: var(--cream); }
+
+/* Alternating section backgrounds — apply via Squarespace section background color setting */
+.page-section--has-background-image + .page-section,
+.sqs-layout .sqs-col-12 { background-color: var(--cream); }
+
+/* Surface sections (sage tint) */
+.section-surface { background-color: var(--surface) !important; }
+
+/* --- Navigation --- */
+/* Logo sizing */
+.header-title-logo img,
+.site-navigation--option-logo-only .header-title-logo img {
+  height: 52px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+/* Nav link styles */
+.header-nav-item a {
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-body) !important;
+  transition: color 0.2s;
+}
+
+.header-nav-item a:hover { color: var(--sage) !important; }
+
+/* Active page nav link */
+.header-nav-item--active a {
+  color: var(--sage) !important;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+
+/* Contact nav button — pill style */
+.header-nav-item:last-child a {
+  background: var(--gold);
+  color: var(--text-dark) !important;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  border-bottom: none !important;
+}
+
+.header-nav-item:last-child a:hover {
+  background: #e6b820;
+  color: var(--text-dark) !important;
+}
+
+/* Nav background */
+.header-inner { background-color: var(--cream) !important; }
+.header { border-bottom: 1px solid var(--border-gold); }
+
+/* --- Buttons --- */
+.sqs-block-button-element,
+.btn-primary {
+  font-family: system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 12px 28px !important;
+  letter-spacing: 0.3px;
+  transition: all 0.2s;
+}
+
+/* Primary button — gold */
+.sqs-block-button-element--small,
+.sqs-block-button-element--medium {
+  background-color: var(--gold) !important;
+  color: var(--text-dark) !important;
+  border: none !important;
+}
+
+.sqs-block-button-element--small:hover,
+.sqs-block-button-element--medium:hover {
+  background-color: #e6b820 !important;
+}
+
+/* Outline button — sage */
+.sqs-block-button-element--large {
+  background-color: transparent !important;
+  color: var(--sage) !important;
+  border: 2px solid var(--sage) !important;
+}
+
+.sqs-block-button-element--large:hover {
+  background-color: var(--sage) !important;
+  color: #fff !important;
+}
+
+/* --- Cards --- */
+.dw-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.dw-card--gold { border-top: 3px solid var(--gold); }
+.dw-card--sage { border-top: 3px solid var(--sage); }
+
+/* --- Page Hero (inner pages) --- */
+.dw-page-hero {
+  background: linear-gradient(160deg, var(--cream) 0%, var(--surface) 100%);
+  padding: var(--section-pad);
+  text-align: center;
+}
+
+/* --- Footer --- */
+footer, .footer-inner {
+  background-color: #2d2218 !important;
+}
+
+footer a, .footer-nav-item a {
+  font-family: system-ui, sans-serif !important;
+  font-size: 10px !important;
+  color: #7a6a5a !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-copyright { color: #7a6a5a; font-size: 10px; font-family: system-ui, sans-serif; }
+
+/* --- Accordion Block (FAQ page) --- */
+.sqs-block-accordion .accordion-item {
+  border: 1px solid #e8e0d0;
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+
+.sqs-block-accordion .accordion-item-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-style: italic;
+  font-size: 14px !important;
+  color: var(--text-dark) !important;
+  background: var(--cream);
+  padding: 14px 18px;
+}
+
+.sqs-block-accordion .accordion-item-title::after {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.sqs-block-accordion .accordion-item-content {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--text-body);
+  padding: 14px 18px;
+  background: #fff;
+  border-top: 1px solid #e8e0d0;
+}
+
+/* --- Blog: Featured first post override --- */
+.blog-list-item:first-child {
+  grid-column: 1 / -1;
+}
+
+.blog-list-item:first-child .blog-list-item-image-wrapper {
+  height: 300px;
+}
+
+/* ⚠ Note: Verify selector against live Squarespace 7.1 blog page —
+   actual generated class names may differ. Inspect in DevTools. */
