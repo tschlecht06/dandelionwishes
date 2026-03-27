@@ -3,8 +3,18 @@
    Paste this entire file into: Design > Custom CSS
    ============================================================ */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+/* --- Google Fonts ---
+   IMPORTANT: The font link tag must be added separately in Squarespace via:
+   Settings > Advanced > Code Injection > Header
+   Paste this into the Header field:
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+   @import is not used here because Squarespace injects Custom CSS as a <style> block,
+   where @import is ignored. Fonts must be loaded via a <link> tag in Code Injection.
+   -------------------------------------------------------- */
 
 /* --- Design Tokens --- */
 :root {
@@ -18,6 +28,8 @@
   --text-muted:  #8a7a6a;
   --dark-bg:     #3d3028;
   --border-gold: #f4e8b8;
+  --gold-dark:   #e6b820;   /* hover state for gold interactive elements */
+  --footer-bg:   #2d2218;   /* footer background — deeper than --dark-bg */
 
   --radius-sm:   8px;
   --radius-md:   12px;
@@ -108,7 +120,7 @@ body { background-color: var(--cream); }
 }
 
 .header-nav-item:last-child a:hover {
-  background: #e6b820;
+  background: var(--gold-dark);
   color: var(--text-dark) !important;
 }
 
@@ -116,7 +128,13 @@ body { background-color: var(--cream); }
 .header-inner { background-color: var(--cream) !important; }
 .header { border-bottom: 1px solid var(--border-gold); }
 
-/* --- Buttons --- */
+/* --- Buttons ---
+   IMPORTANT for content editors: In this design, button SIZE is used to select button STYLE:
+   - Small or Medium button = filled gold (primary action)
+   - Large button = sage outline (secondary action)
+   This is intentional. When adding buttons in Squarespace, choose the size that gives
+   the visual style you need, not the size that reflects button importance.
+   -------------------------------------------------------- */
 .sqs-block-button-element,
 .btn-primary {
   font-family: system-ui, sans-serif !important;
@@ -138,7 +156,7 @@ body { background-color: var(--cream); }
 
 .sqs-block-button-element--small:hover,
 .sqs-block-button-element--medium:hover {
-  background-color: #e6b820 !important;
+  background-color: var(--gold-dark) !important;
 }
 
 /* Outline button — sage */
@@ -173,18 +191,18 @@ body { background-color: var(--cream); }
 
 /* --- Footer --- */
 footer, .footer-inner {
-  background-color: #2d2218 !important;
+  background-color: var(--footer-bg) !important;
 }
 
 footer a, .footer-nav-item a {
   font-family: system-ui, sans-serif !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
   color: #7a6a5a !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.footer-copyright { color: #7a6a5a; font-size: 10px; font-family: system-ui, sans-serif; }
+.footer-copyright { color: #7a6a5a; font-size: 12px; font-family: system-ui, sans-serif; }
 
 /* --- Accordion Block (FAQ page) --- */
 .sqs-block-accordion .accordion-item {
