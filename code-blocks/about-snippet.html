@@ -1,0 +1,75 @@
+<!-- DANDELION WISHES — Homepage About Snippet
+     Squarespace: Home page > Add Block > Code > paste this -->
+<style>
+.dw-about-snippet {
+  background: #f5f9f0;
+  padding: 44px 32px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.dw-about-snippet__photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.dw-about-snippet__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.dw-about-snippet__label {
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7a9e7e;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.dw-about-snippet__name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #3d3028;
+  margin-bottom: 10px;
+}
+.dw-about-snippet__bio {
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  color: #5a4a3a;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 14px;
+}
+.dw-about-snippet__link {
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7a9e7e;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .dw-about-snippet { flex-direction: column; text-align: center; }
+}
+</style>
+
+<div class="dw-about-snippet">
+  <div class="dw-about-snippet__photo">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/6945cb2027be636b679bba8a/282c19c3-c309-483b-aac9-f376ae2fde2a/IMG_2279.png"
+      alt="Cat Ianni-Schlecht, Licensed Professional Counselor and Registered Play Therapist in Thornton, CO"
+    />
+  </div>
+  <div>
+    <div class="dw-about-snippet__label">Meet Your Therapist</div>
+    <div class="dw-about-snippet__name">Cat Ianni-Schlecht, MA, LPC, NCC, RPT</div>
+    <div class="dw-about-snippet__bio">
+      Licensed Professional Counselor and Registered Play Therapist dedicated to creating
+      a warm, play-filled space where children can express themselves safely and begin to heal.
+    </div>
+    <a href="/about" class="dw-about-snippet__link">Read Cat's full bio →</a>
+  </div>
+</div>

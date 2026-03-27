@@ -1,0 +1,120 @@
+<!-- DANDELION WISHES — Homepage Hero
+     Squarespace: Home page > Add Block > Code > paste this -->
+<style>
+.dw-hero {
+  background: linear-gradient(160deg, #fffdf0 0%, #f5f9f0 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 380px;
+  overflow: hidden;
+}
+.dw-hero__text {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.dw-hero__eyebrow {
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #7a9e7e;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.dw-hero__headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-style: italic;
+  color: #3d3028;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.dw-hero__headline .accent-sage { color: #7a9e7e; }
+.dw-hero__headline .accent-gold { color: #f4c430; }
+.dw-hero__sub {
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  color: #6a5a4a;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 300px;
+}
+.dw-hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.dw-btn-primary {
+  display: inline-block;
+  background: #f4c430;
+  color: #3d3028;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.dw-btn-primary:hover { background: #e6b820; }
+.dw-btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #7a9e7e;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: 2px solid #7a9e7e;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.dw-btn-outline:hover { background: #7a9e7e; color: #fff; }
+.dw-hero__photo {
+  position: relative;
+  overflow: hidden;
+}
+.dw-hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.dw-hero__photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #fffdf0 0%, transparent 28%);
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .dw-hero { grid-template-columns: 1fr; }
+  .dw-hero__photo { height: 240px; }
+  .dw-hero__text { padding: 36px 24px; }
+}
+</style>
+
+<div class="dw-hero">
+  <div class="dw-hero__text">
+    <div class="dw-hero__eyebrow">Child Counseling &amp; Play Therapy · Thornton, CO</div>
+    <div class="dw-hero__headline">
+      A safe place for children to
+      <span class="accent-sage">process, play,</span>
+      learn, and <span class="accent-gold">grow</span>
+    </div>
+    <div class="dw-hero__sub">
+      Cat Ianni-Schlecht, MA, LPC, RPT — Licensed Professional Counselor &amp;
+      Registered Play Therapist serving children, teens, and families.
+    </div>
+    <div class="dw-hero__ctas">
+      <a href="/contact" class="dw-btn-primary">Get in Touch</a>
+      <a href="/about" class="dw-btn-outline">Learn More</a>
+    </div>
+  </div>
+  <div class="dw-hero__photo">
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/6945cb2027be636b679bba8a/dd15c8bd-a84e-44f7-9be4-e1a3fee44b3f/shutterstock_339633185+%281%29.jpg"
+      alt="Child blowing dandelion seeds — play therapy in Thornton Colorado"
+    />
+  </div>
+</div>
