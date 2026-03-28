@@ -430,7 +430,7 @@ h3 { font-size: clamp(18px, 2.5vw, 24px); }
 .bio-section { background: #fff; padding: 64px 0; }
 .bio-section__inner {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 350px 1fr;
   gap: 48px;
   align-items: start;
 }

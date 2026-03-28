@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:dandelionwishescounseling.com)",
+      "Bash(C:/Users/Tyler/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.5/scripts/start-server.sh --project-dir E:/dandelionwishes)",
+      "Bash(C:/Users/Tyler/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.5/skills/brainstorming/scripts/start-server.sh --project-dir E:/dandelionwishes)",
+      "Bash(git -C E:/dandelionwishes init)",
+      "Bash(git -C E:/dandelionwishes add css/dandelion-wishes.css)",
+      "Bash(git -C E:/dandelionwishes commit -m \"feat: add global custom CSS with design tokens, typography, nav, buttons\")",
+      "Bash(git:*)",
+      "Bash(curl -sL \"https://images.squarespace-cdn.com/content/v1/6945cb2027be636b679bba8a/60025083-9d94-40c4-ad15-e0325361516e/Screenshot+2023-02-05+201258.png\" -o \"E:/dandelionwishes/images/logo.png\")",
+      "Bash(curl -sL \"https://images.squarespace-cdn.com/content/v1/6945cb2027be636b679bba8a/dd15c8bd-a84e-44f7-9be4-e1a3fee44b3f/shutterstock_339633185+%281%29.jpg\" -o \"E:/dandelionwishes/images/hero.jpg\")",
+      "Bash(curl -sL \"https://images.squarespace-cdn.com/content/v1/6945cb2027be636b679bba8a/282c19c3-c309-483b-aac9-f376ae2fde2a/IMG_2279.png\" -o \"E:/dandelionwishes/images/cat-headshot.jpg\")"
+    ]
+  }
+}
