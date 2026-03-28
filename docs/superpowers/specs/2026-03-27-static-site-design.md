@@ -152,6 +152,8 @@ Sitemap: https://dandelionwishescounseling.com/sitemap.xml
 - Output directory: *(leave blank — deploys from repo root)*
 - Custom domain: `dandelionwishescounseling.com` (configured in Cloudflare DNS)
 
+Cloudflare Pages strips `.html` extensions automatically — `about.html` is served at `/about`, `services.html` at `/services`, etc. No redirect rules needed. The sitemap uses these clean URLs.
+
 ## What Cat Still Needs to Provide
 
 - 3 service photos (child therapy, teen therapy, parent coaching)
