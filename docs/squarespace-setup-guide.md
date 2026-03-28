@@ -28,7 +28,7 @@ Your site uses two custom fonts (Cormorant Garamond for headings, Source Serif 4
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 ```
 
 3. Click **Save**
@@ -235,6 +235,8 @@ dandelionwishes/
 │   ├── credential-badges.html        ← About: credential sidebar
 │   ├── hipaa-notice.html             ← Contact: form warning
 │   └── schema-markup.html            ← Header injection (global, all pages)
-└── seo/
-    └── page-seo-reference.md         ← Page titles, meta descriptions, slugs
+├── seo/
+│   └── page-seo-reference.md         ← Page titles, meta descriptions, slugs
+└── docs/
+    └── squarespace-setup-guide.md    ← This setup guide
 ```
