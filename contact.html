@@ -55,20 +55,124 @@
       <div>
         <h2 class="contact-form-title">Send a message</h2>
 
+        <div id="formWrap">
+
         <!-- HIPAA notice -->
         <div class="hipaa-notice">
           <span class="hipaa-notice__icon">⚠</span>
           <span><strong>Please do not include sensitive health information in this form.</strong> This contact form is not a HIPAA-secure channel. For confidential communication, please call or email directly.</span>
         </div>
 
-        <!-- Simple Practice embed placeholder -->
-        <div class="simple-practice-embed">
-          <!-- SIMPLE PRACTICE EMBED: paste your embed code here -->
-          <!-- Remove this placeholder div and replace with the embed script/iframe from Simple Practice -->
-          <p style="margin:0; color: #8a7a6a;">Contact form loading...</p>
-        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row form-row--2col">
+            <div class="form-group">
+              <label class="form-label" for="fullName">Your Name <span class="form-required">*</span></label>
+              <input class="form-input" type="text" id="fullName" name="name" required placeholder="First and last name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number <span class="form-hint">(or email — at least one required)</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(303) 555-0100">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address <span class="form-hint">(or phone — at least one required)</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="you@example.com">
+            <span class="form-error" id="contactError" style="display:none; color:#c0392b; font-family:system-ui,sans-serif; font-size:12px; margin-top:4px;">Please provide at least a phone number or email address.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred follow-up method <span class="form-required">*</span></label>
+            <div class="form-radio-group">
+              <label class="form-radio">
+                <input type="radio" name="preferred_contact" value="Email"> Email
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="preferred_contact" value="Phone"> Phone
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="preferred_contact" value="No Preference" checked> No Preference
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="hearAbout">How did you hear about us?</label>
+            <select class="form-input form-select" id="hearAbout" name="how_did_you_hear">
+              <option value="">— Select one —</option>
+              <option>Referral (Friend/Family)</option>
+              <option>Referral (Healthcare Professional/Therapist)</option>
+              <option>Online Search (Google, Bing, etc.)</option>
+              <option>Insurance Provider Directory</option>
+              <option>Directory (Psychology Today)</option>
+              <option>Social Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="comments">Anything else you'd like us to know?</label>
+            <textarea class="form-input form-textarea" id="comments" name="message" rows="4" placeholder="What brings you here, questions you have, or anything else on your mind…"></textarea>
+          </div>
+
+          <input type="hidden" name="access_key" value="683c84a7-6a94-4b4a-b135-220c5a31d27c">
+          <input type="hidden" name="subject" value="New contact form submission — Dandelion Wishes Counseling">
+          <input type="hidden" name="from_name" value="Dandelion Wishes Website">
+          <input type="hidden" name="botcheck" value="" style="display:none;">
+
+          <button type="submit" class="btn btn--gold form-submit" id="submitBtn">Send Message</button>
+        </form>
+
+        <script>
+          document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var phone = document.getElementById('phone').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var err = document.getElementById('contactError');
+            if (!phone && !email) {
+              err.style.display = 'block';
+              document.getElementById('phone').focus();
+              return;
+            }
+            err.style.display = 'none';
+            var btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.textContent = 'Sending…';
+
+            fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(Object.fromEntries(new FormData(e.target)))
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              if (data.success) {
+                document.getElementById('formWrap').style.display = 'none';
+                document.getElementById('formSuccess').style.display = 'block';
+                gtag('event', 'form_submit', { event_category: 'contact', event_label: 'contact_form' });
+              } else {
+                btn.disabled = false;
+                btn.textContent = 'Send Message';
+                alert('Something went wrong. Please call or email Cat directly.');
+              }
+            })
+            .catch(function() {
+              btn.disabled = false;
+              btn.textContent = 'Send Message';
+              alert('Something went wrong. Please call or email Cat directly.');
+            });
+          });
+        </script>
 
         <p style="font-size:12px; color: #8a7a6a; margin-top: 14px; font-family: system-ui, sans-serif; line-height: 1.6;">Submitting this form does not create a therapist-client relationship.</p>
+
+        </div><!-- /formWrap -->
+
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <p class="form-success__title">Message sent!</p>
+          <p class="form-success__body">Thank you for reaching out. Cat will be in touch as soon as possible — usually within one business day.</p>
+        </div>
+
       </div>
 
       <!-- Right: contact info -->
