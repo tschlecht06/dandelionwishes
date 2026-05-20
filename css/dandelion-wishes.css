@@ -156,6 +156,18 @@ h3 { font-size: clamp(18px, 2.5vw, 24px); }
   transition: all 0.2s;
 }
 
+/* --- NOTICE BANNER ----------------------------------------- */
+.notice-banner {
+  background: rgba(244, 196, 48, 0.13);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 14px 24px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+.notice-banner p { margin: 0; line-height: 1.5; }
+.notice-banner strong { font-weight: 600; }
+
 /* --- PAGE HERO (inner pages) ------------------------------- */
 .page-hero {
   background: linear-gradient(160deg, var(--cream) 0%, var(--surface) 100%);
